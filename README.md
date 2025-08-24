@@ -29,9 +29,7 @@ Implements **Coroutines + Flow** for async data handling and **Swipe-to-Refresh*
 
 ## 📂 Folder Structure
 com.mviktorcomposeexample
-
 │
-
 ├─ common
 │   └─ utils
 │       └─ DateUtils.kt        // e.g., getDaysAgoString() and other helpers
