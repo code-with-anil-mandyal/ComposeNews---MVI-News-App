@@ -29,43 +29,81 @@ Implements **Coroutines + Flow** for async data handling and **Swipe-to-Refresh*
 
 ## 📂 Folder Structure
 com.mviktorcomposeexample
+
 │
+
 ├─ common
+
 │   └─ utils
+
 │       └─ DateUtils.kt        // e.g., getDaysAgoString() and other helpers
+
 │
+
 ├─ data
+
 │   ├─ mapper                  // Maps API response to domain models
+
 │   ├─ remote                  // ApiKey, BaseApiService, NewsService
+
 │   └─ repository              // Implementation of repositories
+
 │
+
 ├─ di
+
 │   ├─ apiModule.kt            // Provides API / Ktor client
+
 │   ├─ networkModule.kt        // Provides networking helpers, interceptors, logging
+
 │   ├─ repositoryModule.kt     // Provides repository instances
+
 │   ├─ useCaseModule.kt        // Provides use case instances
+
 │   └─ viewModelModule.kt      // Provides ViewModel instances
+
 │
+
 ├─ domain
+
 │   ├─ models                  // API response & domain models
+
 │   ├─ repository              // Repository interfaces
+
 │   └─ useCase                  // Use cases like NewsUseCase
+
 │
+
 ├─ presentation
+
 │   ├─ components               // Reusable Composables (Loader, ErrorMessage, NewsItem, etc.)
+
 │   ├─ navigation               // NavHost + screen routes
+
 │   ├─ screens
+
 │   │   ├─ home
+
 │   │   │   ├─ HomeScreen.kt
+
 │   │   │   ├─ HomeViewModel.kt
+
 │   │   │   ├─ HomeState.kt
+
 │   │   │   └─ HomeIntent.kt
+
 │   │   └─ details
+
 │   │       └─ DetailsScreen.kt
+
 │   └─ ui
+
 │       └─ theme                // Colors.kt, Theme.kt, Type.kt
+
 │
+
 ├─ MainActivity.kt
+
 └─ MyApplication.kt
 
 ---
