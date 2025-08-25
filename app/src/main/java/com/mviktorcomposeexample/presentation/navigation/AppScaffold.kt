@@ -16,7 +16,7 @@ import com.mviktorcomposeexample.presentation.screen.details.DetailsScreen
 import com.mviktorcomposeexample.presentation.screen.home.HomeScreen
 
 @Composable
-fun AppScaffold(){
+fun AppScaffold(onChangeTheme: () -> Unit){
     val navController = rememberNavController()
 
     Scaffold {
@@ -24,7 +24,10 @@ fun AppScaffold(){
             navController = navController,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(it)
+                .padding(it),
+            onChangeTheme = {
+                onChangeTheme()
+            }
         )
     }
 }
@@ -32,7 +35,8 @@ fun AppScaffold(){
 @Composable
 fun AppNavHost(
     navController: NavHostController,
-    modifier: Modifier= Modifier
+    modifier: Modifier= Modifier,
+    onChangeTheme: () -> Unit
 ){
     NavHost(
         navController = navController,
@@ -42,7 +46,10 @@ fun AppNavHost(
         composable(Screens.HOME.route) {
             HomeScreen(
                 onArticlesClick = { url ->
-                    navController.navigate("${Screens.DETAILS.route}/${Uri.encode(url)}")})
+                    navController.navigate("${Screens.DETAILS.route}/${Uri.encode(url)}")},
+                onChangeTheme = {
+                    onChangeTheme()
+                })
                 }
 
 

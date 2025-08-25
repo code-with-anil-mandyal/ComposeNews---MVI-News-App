@@ -87,4 +87,5 @@ dependencies {
     implementation(libs.accompanist.swiperefresh)
 
 
+    implementation(libs.accompanist.systemuicontroller)
 }
